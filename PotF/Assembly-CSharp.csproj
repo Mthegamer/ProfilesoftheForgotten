@@ -52,7 +52,6 @@
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueAsset.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueElement.cs" />
-     <Compile Include="Assets\Scripts\DialogueData.cs" />
      <Compile Include="Assets\Scripts\DialogueDisplayer.cs" />
      <Compile Include="Assets\Scripts\SisterAnimation.cs" />
      <Compile Include="Assets\Scripts\SubmissionDisplayer.cs" />

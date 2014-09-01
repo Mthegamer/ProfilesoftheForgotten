@@ -3,16 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ChatPlayer : MonoBehaviour { //handles timer and delays + progress through texts
-	GUIDisplayer guiDisplayer;
 	int progressCounter = 0;
 	DialogueDisplayer dialogueDisplayer;
-	DialogueData data;
-	
+
 
 	// Use this for initialization
 	void Start () {
-		guiDisplayer = gameObject.GetComponent<GUIDisplayer> ();
-		data = gameObject.GetComponent<DialogueData> ();
 		stepsisterCycle ();
 		dialogueDisplayer = gameObject.GetComponent<DialogueDisplayer> ();
 	}
@@ -37,7 +33,6 @@ public class ChatPlayer : MonoBehaviour { //handles timer and delays + progress 
 
 		int delayInt = Random.Range (3, 5);
 		yield return new WaitForSeconds (delayInt);
-		dialogueDisplayer.displaySisterText(data.returnStepsisterSentences()[progressCounter]);
 		jasonCycle ();
 	}
 	
@@ -45,8 +40,6 @@ public class ChatPlayer : MonoBehaviour { //handles timer and delays + progress 
 	IEnumerator jasonDelay()
 	{
 		yield return new WaitForSeconds (2);
-		guiDisplayer.setButtonList(data.returnWordBankList()[progressCounter]);
-		guiDisplayer.toggleOnOff ();
 		progressCounter++;
 	}
 	

@@ -4,9 +4,7 @@ using System.Collections;
 public class WordButton {
 
 	public string buttonLabel;
-	public float buttonPosX;
-	public float buttonPosY;
-	public float buttonWidth;
+	public float buttonPosX, buttonPosY, topLeftX, topLeftY, buttonWidth;
 	public bool toggle = true;
 
 	//Constructor
