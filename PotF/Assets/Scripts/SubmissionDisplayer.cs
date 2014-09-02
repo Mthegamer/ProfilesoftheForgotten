@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SubmissionDisplayer : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class SubmissionDisplayer : MonoBehaviour {
 
 	public void addWord(string word)
 	{
-		submittedWords += word + " ";
+		submittedWords += word;
 	}
 
 	public void reset()
@@ -26,4 +27,16 @@ public class SubmissionDisplayer : MonoBehaviour {
 		GameObject bar = GameObject.Find ("submissionBar");
 		bar.guiText.text = submittedWords;
 	}
+
+//	public bool isProperSentence(string userAnswer, )
+//	{
+//		for (int i = 0; i < answers.Count; i++)
+//		{
+//			if (answers[i] == userAnswer)
+//			{
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 }

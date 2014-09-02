@@ -1,13 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WordButton.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChatPlayer.cs">
     <Files>
-      <File FileName="Assets/Scripts/WordButton.cs" Line="16" Column="33" />
-      <File FileName="Assets/Scripts/SubmissionDisplayer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DialogueDisplayer.cs" Line="7" Column="1" />
       <File FileName="Assets/Scripts/SisterAnimation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DialogueDisplayer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ChatPlayer.cs" Line="8" Column="1" />
-      <File FileName="Assets/Scripts/Button/ButtonLayout.cs" Line="27" Column="4" />
+      <File FileName="Assets/Scripts/Dialogue/Dialogue.cs" Line="5" Column="40" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueAsset.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueElement.cs" Line="10" Column="29" />
+      <File FileName="Assets/Scripts/SubmissionDisplayer.cs" Line="31" Column="6" />
+      <File FileName="Assets/Scripts/Button/ButtonLayout.cs" Line="33" Column="3" />
+      <File FileName="Assets/Scripts/ChatPlayer.cs" Line="26" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

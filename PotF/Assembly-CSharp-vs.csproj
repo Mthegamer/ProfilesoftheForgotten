@@ -55,8 +55,6 @@
      <Compile Include="Assets\Scripts\DialogueDisplayer.cs" />
      <Compile Include="Assets\Scripts\SisterAnimation.cs" />
      <Compile Include="Assets\Scripts\SubmissionDisplayer.cs" />
-     <Compile Include="Assets\Scripts\WordBank.cs" />
-     <Compile Include="Assets\Scripts\WordButton.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

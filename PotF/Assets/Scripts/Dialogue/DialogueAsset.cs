@@ -15,6 +15,6 @@ public class DialogueAsset {
 	[MenuItem("Assets/Create/Dialogue")]
 	public static void CreateAsset ()
 	{
-		CustomAssetUtility.CreateAsset<Dialogue>();
+		CustomAssetUtility.CreateAsset<Dialogue>(); //Dialogue which is a scriptable object allow us to create an instance of it which does not need to be attached to gameobject / is not a monobehaviour
 	}
 }

@@ -3,49 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ChatPlayer : MonoBehaviour { //handles timer and delays + progress through texts
+
+	public Dialogue dialogueFile;
 	int progressCounter = 0;
+	public int delayRangeMin, delayRangeMax, userResponseDelay;
 	DialogueDisplayer dialogueDisplayer;
 
 
-	// Use this for initialization
+	//this should be rewritten such that there is more flexibility in terms of progress
+
 	void Start () {
-		stepsisterCycle ();
+		StepsisterCycle ();
 		dialogueDisplayer = gameObject.GetComponent<DialogueDisplayer> ();
 	}
 
-	void stepsisterCycle() //sets the chat in motion
+	void StepThroughDialogue()
+	{
+		switch (dialogueFile.DialogItems[progressCounter].character)
+		{
+			case Characters.Pink : StartCoroutine ("sisterDelay"); break;
+			case Characters.Stepsister : StartCoroutine ("sisterDelay"); break;
+			case Characters.User : StartCoroutine ("userDelay"); break;
+		}
+	}
+
+	void StepsisterCycle() //sets the chat in motion
 	{
 		StartCoroutine ("sisterDelay");
 	}
 
-	public int returnProgCounter()
+	void userCycle()
 	{
-		return progressCounter;
-	}
-
-	void jasonCycle()
-	{
-		StartCoroutine ("jasonDelay");
+		StartCoroutine ("userDelay");
 	}
 
 	IEnumerator sisterDelay()
 	{
 
-		int delayInt = Random.Range (3, 5);
+		int delayInt = Random.Range (delayRangeMin, delayRangeMax);
 		yield return new WaitForSeconds (delayInt);
-		jasonCycle ();
+		userCycle ();
 	}
 	
 
-	IEnumerator jasonDelay()
+	IEnumerator userDelay()
 	{
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (userResponseDelay);
 		progressCounter++;
 	}
 	
-	// Update is called once per frame
-	void Update () 
+	public int returnProgCounter()
 	{
-
+		return progressCounter;
 	}
 }

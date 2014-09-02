@@ -1,47 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class ButtonLayout : MonoBehaviour {
 
-	public string buttonLabel;
-	public List<GameObject> ButtonList;
-	public float buttonVerticalDistance, buttonHorizontalDistance;
-	float topLeftX, topLeftY;
+	public List<GameObject> ButtonList; //list of buttons as established in inspector/prefab which hold text values/receive input
+	public float buttonVerticalDistance, buttonHorizontalDistance; //spacing between buttons
+	float topLeftX, topLeftY; //marks position of buttonlayout
 
-	// Use this for initialization
-	void Awake () {
-		topLeftX = ButtonList [0].GetComponent<RectTransform> ().anchoredPosition.x; //sets up the button layout with respect to first button
-		topLeftY = ButtonList [0].GetComponent<RectTransform> ().anchoredPosition.y; //in list
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Awake ()
+	{
+		topLeftX = ButtonList [0].GetComponent<RectTransform> ().anchoredPosition.x; //sets up the button layout with respect to first button for designability
+		topLeftY = ButtonList [0].GetComponent<RectTransform> ().anchoredPosition.y;
 	}
 
-	public void Activate(List<string> wordChoices) {
-		for (int i = 0; i < wordChoices.Count; i++) {
-			ButtonList[i].GetComponent<RectTransform> ().anchoredPosition.x = topLeftX + (i % 4) * (buttonHorizontalDistance); //sets x pos
-
-
-			ButtonList[i].GetComponent<RectTransform> ().anchoredPosition.y =												   //sets y pos
-				topLeftY + ((Mathf.FloorToInt(i / 4)) * buttonVerticalDistance);
-
-
+	public void Activate(List<string> wordChoices) //where wordChoices from dialogue asset
+	{
+		for (int i = 0; i < wordChoices.Count; i++)
+		{
+			RectTransform tempButton = ButtonList[i].GetComponent<RectTransform> ();
+			tempButton.anchoredPosition = new Vector2 (topLeftX + (i % 4) * (buttonHorizontalDistance), topLeftY + ((Mathf.FloorToInt(i / 4)) * buttonVerticalDistance)); //places buttons relative to canvas
+			tempButton.GetComponent<Text>().text = wordChoices[i]; //sets button text equal to text from Dialogue asset
+			ButtonList[i].SetActive(true); //makes button visible                                                                             										
 		}
 	}
 
-	public void DeactivateAll() {
+	public void DeactivateAll()
+	{
 		foreach (GameObject button in ButtonList)
 			button.SetActive (false);
 	}
-
-
-
-	//Constructor
-	void setButton (int index, string word) //takes a list of strings and converts each string into a button WordButton object suitable for deployment into OnGUI
-	{
-	}
-
 }

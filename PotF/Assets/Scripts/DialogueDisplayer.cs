@@ -3,25 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class DialogueDisplayer : MonoBehaviour {
+
 	public GUIText sentence;
 	GUIStyle style = new GUIStyle();
 	List<string> dialogueTexts = new List<string>();
-	
-	public void displayJasonText(string userInput)
-	{
-	 //ideal color codes are 6FFF47, CB2EFF, FF69F5
-		addToDialogue ("<color=#6FFF47> Jason: </color>" + userInput);
-	}
 
-	public void displaySisterText(string sisterInput)
+	void Start ()
 	{
-		print ("add to dialogue");
-		addToDialogue ( "<color=#CB2EFF> Stepsister: </color>" + sisterInput);
+		style.richText = true; //allows html modifications to text
+	}
+	
+
+	public void displayCharacterSentence(string characterInput, Characters character)
+	{
+		switch (character)
+		{
+			case Characters.User : addToDialogue ("<color=#6FFF47> Jason: </color>" + characterInput); break;
+			case Characters.Stepsister : addToDialogue ( "<color=#CB2EFF> Stepsister: </color>" + characterInput); break;
+			case Characters.Pink : addToDialogue ( "<color=#CB2EFF> Pink: </color>" + characterInput); break;
+		}
 	}
 
 	void addToDialogue(string sentenceText)
 	{
-
 
 		if (dialogueTexts.Count < 6)
 		{
@@ -54,10 +58,6 @@ public class DialogueDisplayer : MonoBehaviour {
 			}
 		}	
 	}
-	// Use this for initialization
-	void Start ()
-	{
-		style.richText = true;
-	}
+
 
 }
